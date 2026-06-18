@@ -1,5 +1,3 @@
-[build]
-buildCommand = "python -m pip install -r backend/requirements.txt"
-
 [deploy]
-startCommand = "python -m uvicorn backend.api:app --host 0.0.0.0 --port $PORT"
+startCommand = "cd backend && uvicorn api:app --host 0.0.0.0 --port $PORT"
+restartPolicyType = "on_failure"
